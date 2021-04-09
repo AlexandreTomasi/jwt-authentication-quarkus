@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Data
 public class Pessoa extends PanacheEntityBase {
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "pessoa_seq_id")
     @Column(name = "pes_id")
     private Long id;
 
