@@ -1,8 +1,8 @@
 quarkus:
   datasource:
+    db-kind: postgresql
     jdbc:
       url: jdbc:postgresql://localhost:5432/cadastro
-    db-kind: postgresql
     username: postgres
     password: postgres
   servlet:
