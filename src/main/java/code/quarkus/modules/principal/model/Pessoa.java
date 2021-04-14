@@ -2,7 +2,6 @@ package code.quarkus.modules.principal.model;
 
 import code.quarkus.modules.core.enums.EstadoCivil;
 import code.quarkus.modules.core.enums.Sexo;
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
