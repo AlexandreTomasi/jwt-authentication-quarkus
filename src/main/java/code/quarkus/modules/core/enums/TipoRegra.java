@@ -12,6 +12,7 @@ public enum TipoRegra {
     SELECT("Consulta"),
     UPDATE("Alteração"),
     DELETE("Remoção"),
+    INSERT("Remoção"),
     UPDATE_DELETE("Alteração e remoção");
 
     @JsonSerialize(using = ToStringSerializer.class)

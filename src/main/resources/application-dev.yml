@@ -32,6 +32,9 @@ quarkus:
 
   banner:
     path: "banner.txt"
+
+  smallrye-jwt:
+    enabled: true
 #CORS
 app:
   cors:
@@ -40,8 +43,22 @@ app:
     cors-allowed-origins: "*" # separado por vírgula
 
 
-jwt:
-  secret: java2021
-  expiration: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 miliseconds
+mp:
+  jwt:
+    verify:
+      publickey:
+        location: "publickey.pem"
+      issuer: "http://localhost:8080/"
+# for jwt expiration duration
+com:
+  quarkusjwt:
+    jwt:
+      duration: 3000 #300 = 5min
+# for user's password simulation
+    password:
+      secret: mysecret
+      iteration: 33
+      keylength: 256
+
 
 baseUrlFrontEnd: http://localhost:8081

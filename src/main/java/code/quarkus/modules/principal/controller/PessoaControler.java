@@ -4,6 +4,7 @@ import code.quarkus.modules.principal.model.Pessoa;
 import code.quarkus.modules.principal.model.dto.PessoaDTO;
 import code.quarkus.modules.principal.service.IpessoaService;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -17,12 +18,12 @@ public class PessoaControler {
     @Inject
     IpessoaService ipessoaService;
 
-    @GET
-    public List<Pessoa> buscarTodasPessoas(){
-        return Pessoa.listAll();
+    @GET @RolesAllowed("pessoaSELECT")
+    public List<PessoaDTO> buscarTodasPessoas(){
+        return ipessoaService.listaPessoas();
     }
 
-    @POST
+    @POST @RolesAllowed("pessoaUPDATE")
     public void inserir(PessoaDTO pessoaDTO){
         ipessoaService.insert(pessoaDTO);
     }
