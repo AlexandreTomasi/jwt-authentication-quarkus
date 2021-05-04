@@ -1,6 +1,5 @@
 package code.quarkus.modules.principal.controller;
 
-import code.quarkus.modules.principal.model.Pessoa;
 import code.quarkus.modules.principal.model.dto.PessoaDTO;
 import code.quarkus.modules.principal.service.IpessoaService;
 

@@ -10,6 +10,7 @@ CREATE TABLE public.pessoa (
 	pes_email varchar(200) NULL,
 	pes_sexo varchar(15) NULL,
 	pes_ativo bool NOT NULL,
+	pes_password varchar(200) NULL,
 	CONSTRAINT pessoa_pkey PRIMARY KEY (pes_id)
 );
 

@@ -28,3 +28,5 @@
 - Aguarde alguns segundos para inicializar, para verificar se executou acesse:
    [http://localhost:8080/q/swagger-ui/](http://localhost:8080/q/swagger-ui/). aonde se encontra a documentação das APIs.
 
+### Testando
+Utilizando o swagger
