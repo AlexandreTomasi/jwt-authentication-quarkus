@@ -29,4 +29,23 @@
    [http://localhost:8080/q/swagger-ui/](http://localhost:8080/q/swagger-ui/). aonde se encontra a documentação das APIs.
 
 ### Testando
-Utilizando o swagger
+Utilizando o swagger:
+1- fazer login, utilize o seguinte json no corpo:  
+`{
+"password": "admin",
+"username": "ale@gmail.com"
+}`
+Como resposta irá ser recebido o token.  
+2- No swagger clique no botão Authorize e adicione o token do login, pronto ja pode utilizar as APIs de pessoa.  
+Inserir pessoa json:  
+``{
+"cpf": 3325696250,
+"dataNascimento": "2021-05-05",
+"email": "sa@teste",
+"estadoCivil": {"name":"CASADO"},
+"nome": "string",
+"nomeMae": "string",
+"nomePai": "string",
+"sexo": {"name":"FEMININO"},
+"password": "123456"
+}``

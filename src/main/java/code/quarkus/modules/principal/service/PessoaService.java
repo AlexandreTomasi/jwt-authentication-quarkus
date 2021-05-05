@@ -4,6 +4,7 @@ import code.quarkus.modules.config.PessoaMapper;
 import code.quarkus.modules.principal.model.Pessoa;
 import code.quarkus.modules.principal.model.dto.PessoaDTO;
 import code.quarkus.modules.principal.repository.PessoaRepository;
+import code.quarkus.security.service.PBKDF2Encoder;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -20,11 +21,15 @@ public class PessoaService implements IpessoaService {
     @Inject
     PessoaRepository pessoaRepository;
 
+    @Inject
+    PBKDF2Encoder passwordEncoder;
+
     @Override
     @Transactional
     public void insert(PessoaDTO pessoaDTO) {
 
         Pessoa pessoa = pessoaMapper.toResource( pessoaDTO );
+        pessoa.setPassword(passwordEncoder.encode(pessoaDTO.getPassword()));
         Pessoa.persist(pessoa);
     }
 
