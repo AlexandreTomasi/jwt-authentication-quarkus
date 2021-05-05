@@ -29,10 +29,9 @@ import javax.ws.rs.core.Application;
                         url = "https://www.apache.org/licenses/LICENSE-2.0.html"))
 )
 @SecuritySchemes(value = {
-        @SecurityScheme(securitySchemeName = "apiKey",
+        @SecurityScheme(securitySchemeName = "jwt",
                 type = SecuritySchemeType.HTTP,
                 scheme = "Bearer")}
 )
-@SecurityRequirement(name = "apiKey")
 public class SwaggerConfig extends Application {
 }
