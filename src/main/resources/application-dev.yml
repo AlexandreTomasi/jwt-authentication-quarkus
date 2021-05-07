@@ -62,3 +62,11 @@ com:
 
 
 baseUrlFrontEnd: http://localhost:8081
+
+code:
+  quarkus:
+    modules:
+      multipart:
+          MultipartService/mp-rest/url: http://localhost:8080/
+      multipartsesp:
+          MultipartServiceSesp/mp-rest/url: https://homolog2.sesp.mt.gov.br/ws-sesp-smtc/api/preocorrencia/upload
