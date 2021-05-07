@@ -30,7 +30,7 @@ public enum EstadoCivil {
         return name();
     }
 
-    @JsonCreator
+    @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
     public static EstadoCivil findValue(Object name) {
         if (name instanceof String) {
             return EstadoCivil.valueOf(name.toString());

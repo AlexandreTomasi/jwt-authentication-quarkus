@@ -27,7 +27,7 @@ public enum Sexo {
         return name();
     }
 
-    @JsonCreator
+    @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
     public static Sexo findValue(Object name) {
         if (name instanceof String) {
             return Sexo.valueOf(name.toString());
